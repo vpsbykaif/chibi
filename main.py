@@ -212,9 +212,6 @@ class ChibiBot:
 
     async def post_init(self, application: Application) -> None:
         await application.bot.set_my_commands(self.commands)
-
-   async def handle_voice_or_image(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        await update.message.reply_text("Sorry, I can only process text messages.")
        
     def run(self) -> None:
         if telegram_settings.proxy:
