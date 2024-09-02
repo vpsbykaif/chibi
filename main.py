@@ -92,10 +92,7 @@ class ChibiBot:
         )
         await telegram_message.reply_text(help_text, disable_web_page_preview=True)
 
-    @check_user_allowance
-    async def handle_voice_or_image(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("Sorry, I can only process text messages.")
-    
+    @check_user_allowance 
     async def reset(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         task = asyncio.create_task(handle_reset(update=update, context=context))
         self.background_tasks.add(task)
@@ -216,6 +213,9 @@ class ChibiBot:
     async def post_init(self, application: Application) -> None:
         await application.bot.set_my_commands(self.commands)
 
+   async def handle_voice_or_image(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        await update.message.reply_text("Sorry, I can only process text messages.")
+       
     def run(self) -> None:
         if telegram_settings.proxy:
             app = (
