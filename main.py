@@ -31,6 +31,10 @@ from chibi.services.bot import (
     handle_prompt,
     handle_reset,
 )
+from keep_alive import keep_alive
+
+keep_alive()
+
 from chibi.utils import (
     GROUP_CHAT_TYPES,
     check_user_allowance,
