@@ -244,8 +244,6 @@ class ChibiBot:
         app.add_handler(CommandHandler("start", self.help))
 
         app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), self.prompt))
-        app.add_handler(MessageHandler(filters.VOICE, self.handle_voice_or_image))
-        app.add_handler(MessageHandler(filters.PHOTO, self.handle_voice_or_image))
         
 
         app.add_handler(
