@@ -79,7 +79,7 @@ class ChibiBot:
                     description="Set your own MistralAI key",
                 )
             )
-            self.commands.append(BotCommand(command="set_openai_key", description="Set your own OpenAI key"))
+            self.commands.append(BotCommand(command="set_openai_key", description="Set your own OpenAI key\n\nDeveloper: @kaifsarkar53"))
         self.background_tasks: set[Task] = set()
 
     async def help(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
